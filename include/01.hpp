@@ -1,0 +1,1 @@
+namespace aoc {} // namespace aoc

@@ -1,4 +1,0 @@
-#!/bin/bash -x
-
-# Get keys from github.
-ssh-keyscan -H github.com >> ~/.ssh/known_hosts

@@ -60,12 +60,15 @@ RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-5.0 40
 RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-5.0 40
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
-RUN printf "unbind C-b\nset -g prefix C-a\nbind a send-prefix\nunbind r\nbind r source-file ~/.tmux.conf\nbind-key C-a 'last-window'\nset -g history-limit 50000\nset -g set-titles on\n" > /root/.tmux.conf
+RUN printf "unbind C-b\nset -g prefix C-a\nbind a send-prefix\nunbind r\nbind r source-file ~/.tmux.conf\nbind-key C-a 'last-window'\nset -g history-limit 50000\nset -g set-titles on\nset -g focus-events on\n" > /root/.tmux.conf
 
+COPY .vimrc /root/.vimrc
 COPY .emacs /root/.emacs
 RUN mkdir /root/.emacs-files \
   && wget -O - https://raw.githubusercontent.com/ldm5180/modern-cpp-font-lock/master/modern-cpp-font-lock.el >> /root/.emacs-files/modern-cpp-font-lock.el \
-  && wget -O - https://raw.githubusercontent.com/ldm5180/modern-cpp-font-lock/master/gtest-cpp-font-lock.el >> /root/.emacs-files/gtest-cpp-font-lock.el
+  && wget -O - https://raw.githubusercontent.com/ldm5180/modern-cpp-font-lock/master/gtest-cpp-font-lock.el >> /root/.emacs-files/gtest-cpp-font-lock.el \
+  && wget -O - https://raw.githubusercontent.com/michaelklishin/cucumber.el/master/feature-mode.el >> /root/.emacs-files/feature-mode.el \
+  && wget -O - https://raw.githubusercontent.com/jrblevin/markdown-mode/master/markdown-mode.el >> /root/.emacs-files/markdown-mode.el
 
 # Make bash the default shell (useful for when using tmux in the container)
 RUN chsh --shell /bin/bash root

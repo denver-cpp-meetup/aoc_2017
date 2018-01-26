@@ -19,6 +19,12 @@
 (require 'gtest-cpp-font-lock)
 (gtest-c++-font-lock-global-mode t)
 
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\.md$" . markdown-mode))
+
 (set-face-foreground 'minibuffer-prompt "brightblue")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
