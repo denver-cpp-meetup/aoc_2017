@@ -1,6 +1,6 @@
 # Set flags for all compilations.
 add_definitions("-Wall -Werror -pedantic -Wextra")
-add_definitions(-std=c++1z)
+add_definitions(-std=c++17)
 add_definitions(-stdlib=libc++)
 add_definitions(-nodefaultlibs)
 
