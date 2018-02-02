@@ -4,19 +4,12 @@
 #include <numeric>
 namespace aoc {
 int captcha(std::experimental::string_view test) {
-  constexpr auto to_int = [](const auto pos) { return pos - '0'; };
   int accum = 0;
-  if (test.empty()) {
-    return {};
+  for (std::size_t i = 0; i < test.size(); ++i) {
+    if (test[i] == test[(i + 1) % test.size()]) {
+      accum += test[i] - '0';
+    }
   }
-  std::accumulate(std::begin(test), std::end(test), test.back(),
-                  [&](const auto cur, const auto next) {
-                    assert(cur >= '0' and cur <= '9');
-                    if (cur == next) {
-                      accum += to_int(cur);
-                    }
-                    return next;
-                  });
   return accum;
 }
 } // namespace aoc
