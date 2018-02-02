@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cassert>
 #include <experimental/string_view>
 #include <numeric>
 namespace aoc {
@@ -10,6 +11,7 @@ int captcha(std::experimental::string_view test) {
   }
   std::accumulate(std::begin(test), std::end(test), test.back(),
                   [&](const auto cur, const auto next) {
+                    assert(cur >= '0' and cur <= '9');
                     if (cur == next) {
                       accum += to_int(cur);
                     }
