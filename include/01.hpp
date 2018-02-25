@@ -3,6 +3,7 @@
 #include <experimental/string_view>
 #include <numeric>
 namespace aoc {
+
 int captcha(std::experimental::string_view test) {
   int accum = 0;
   for (std::size_t i = 0; i < test.size(); ++i) {
@@ -12,4 +13,16 @@ int captcha(std::experimental::string_view test) {
   }
   return accum;
 }
+
+int captcha2(std::experimental::string_view test) {
+  int accum = 0;
+  for (std::size_t i = 0; i < test.size(); ++i) {
+    const auto opposite_index = (i + test.size() / 2) % test.size();
+    if (test[i] == test[opposite_index]) {
+      accum += test[i] - '0';
+    }
+  }
+  return accum;
+}
+
 } // namespace aoc
