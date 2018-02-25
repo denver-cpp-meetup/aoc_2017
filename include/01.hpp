@@ -1,3 +1,5 @@
+#ifndef AOC_2017_01_HPP
+#define AOC_2017_01_HPP
 #include <algorithm>
 #include <cassert>
 #include <experimental/string_view>
@@ -26,3 +28,4 @@ int captcha2(std::experimental::string_view test) {
 }
 
 } // namespace aoc
+#endif // AOC_2017_01_HPP

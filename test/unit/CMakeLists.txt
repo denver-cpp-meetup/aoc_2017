@@ -26,5 +26,8 @@ endmacro(add_unit_test)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/share/${PROJECT_NAME})
 
-add_executable(unit_test 01_test.cpp)
-add_unit_test(UnitTests unit_test)
+add_executable(unit_test_01 01_test.cpp)
+add_unit_test(UnitTests_01 unit_test_01)
+
+add_executable(unit_test_02 02_test.cpp)
+add_unit_test(UnitTests_02 unit_test_02)
