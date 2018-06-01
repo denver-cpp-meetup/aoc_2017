@@ -22,4 +22,7 @@ GTEST("AOC 2017: 04") {
     EXPECT_TRUE(aoc::is_valid("aa bb cc dd aaa"));
   }
   SHOULD("part 2 ex 1") { EXPECT_TRUE(aoc::is_valid("abcde fghij")); }
+  SHOULD("part 2 ex 2") {
+    EXPECT_FALSE(aoc::is_valid("abcde xyz ecdab"));
+  }
 }
