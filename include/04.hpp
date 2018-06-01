@@ -8,7 +8,8 @@ bool is_valid(std::experimental::string_view s) {
   using namespace std::experimental;
   std::unordered_set<std::string> strings{};
   std::vector<std::string> words{};
-  boost::split(words, s, boost::is_any_of(" "));
+  boost::split(words, s, boost::is_any_of(" "),
+               boost::token_compress_on);
   for (const auto &word : words) {
     if (not strings.insert(word).second) {
       return false;
