@@ -8,8 +8,10 @@ int main(int argc, [[maybe_unused]] char **argv) {
     return 1;
   }
   std::ifstream f(argv[1]);
-  std::string input;
-  std::getline(f, input);
-
+  int count = 0;
+  for (std::string input; std::getline(f, input);) {
+    count += aoc::is_valid(input) ? 1 : 0;
+  }
+  std::cout << count << "\n";
   return {};
 }
