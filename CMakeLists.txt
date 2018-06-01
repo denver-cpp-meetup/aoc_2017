@@ -10,6 +10,7 @@ set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/.cmake)
 include(build_type)
 include(git_hooks)
 include(compiler_flags)  
+#add_definitions("-fsanitize=address")
 
 # Testing libraries.
 include(gtest)
