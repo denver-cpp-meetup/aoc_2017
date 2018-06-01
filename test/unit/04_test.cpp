@@ -13,7 +13,7 @@ GTEST("AOC 2017: 04") {
     EXPECT_FALSE(aoc::is_valid("aa bb cc dd aa"));
   }
   SHOULD("space at the end") {
-    EXPECT_FALSE(aoc::is_valid("aa bb cc dd aa "));
+    EXPECT_TRUE(aoc::is_valid("aa bb cc dd "));
   }
   SHOULD("multiple spaces") {
     EXPECT_TRUE(aoc::is_valid("aa  bb  cc dd"));
