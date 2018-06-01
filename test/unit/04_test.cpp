@@ -18,4 +18,7 @@ GTEST("AOC 2017: 04") {
   SHOULD("multiple spaces") {
     EXPECT_TRUE(aoc::is_valid("aa  bb  cc dd"));
   }
+  SHOULD("example 3") {
+    EXPECT_TRUE(aoc::is_valid("aa bb cc dd aaa"));
+  }
 }
